@@ -6,9 +6,9 @@
 
 # expiration limits, change according to requirements
 HOUR_LIMIT="4 hours"
-DAY_LIMIT="4 days"
+DAY_LIMIT="7 days"
 WEEK_LIMIT="4 weeks"
-MONTH_LIMIT="4 months"
+MONTH_LIMIT="3 months"
 
 # snapshot directory base path
 SUBVOLS="$HOME/.snapshots"

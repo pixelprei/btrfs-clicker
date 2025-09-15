@@ -2,7 +2,7 @@
 
 This is yet another small set of scripts for _creating and pruning BTRFS snapshots_. I use it on my immutable Linux operating system (ATOMIC Fedora). It can be run by ordinary users, as long as they are allowed `sudo btrfs`. It does not require access to any files outside of `$HOME`.
 
-The scripts maintain sets of hourly, daily, weekly and monthly snapshots. The scripts are idempotent, meaning that thet can be called any number of times without causing uninteded effects.
+The scripts maintain sets of hourly, daily, weekly and monthly snapshots. The scripts are _idempotent_, meaning that thet can be called any number of times without causing uninteded effects.
 
 # Usage
 `btrfs-click` creates a new set of snapshots:

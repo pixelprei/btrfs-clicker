@@ -1,6 +1,10 @@
 #!/bin/bash
 
+# --- CONFIGURATION STARTS HERE -----------------------------------------
+
 prefix="$HOME/.snapshots"
+
+# --- CONFIGURATION ENDS HERE -------------------------------------------
 
 hour="$(date +"%H")"
 minute="$(date +"%M")"
