@@ -35,3 +35,7 @@ To configure the `btrfs-click.sh` script:
 To configure the `btrfs-clean.sh` script:
 * Change the _snapshot path_ from `$HOME/.snapshots` to something else.
 * Change the _expiration date_ for hourly, daily, weekly and monthly snapshots. This can be described in textual representation as described [here](https://www.gnu.org/software/coreutils/manual/html_node/Relative-items-in-date-strings.html#Relative-items-in-date-strings-1).
+
+# Inspiration
+This script is inspired by [snapper](http://snapper.io/). Although a lot more advanced, it requires [layering](https://coreos.github.io/rpm-ostree/layering/) which I want to avoid whenever possible. Another nice solution is [btrsnap](https://github.com/phdenzel/btrsnap). A bash script as well, but too advanced for my taste. More importantly, I run into issues on my immutable OS because the entire script must be run using `sudo`. Many other solutions exist, but I didn't try them.
+
