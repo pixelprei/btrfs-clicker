@@ -18,7 +18,16 @@ The scripts maintain sets of hourly, daily, weekly and monthly snapshots. The sc
 * Remove _monthly_ snapshots older than 3 months
 
 # Installation
-TBD
+* Both scripts are on the `$PATH` and executable.
+* Command `/usr/bin/btrfs` is available.
+* User has `sudo` rights for `/usr/bin/btrfs`.
+* Subvolume `$HOME/.snapshots` is available.
 
 # Configuration
-TBD
+`btrfs-click.sh` script:
+* Change the _snapshot path_ from `$HOME/.snapshots` to something else.
+
+`btrfs-clean.sh` script:
+* Change the _snapshot path_ from `$HOME/.snapshots` to something else.
+* Change the _expiration date_ for hourly, daily, weekly and monthly snapshots.
+
