@@ -18,10 +18,10 @@ The scripts maintain sets of hourly, daily, weekly and monthly snapshots. The sc
 * Remove _monthly_ snapshots older than 3 months
 
 # Installation
-* Both scripts are on the `$PATH` and executable.
-* Command `/usr/bin/btrfs` is available.
-* User has `sudo` rights for `/usr/bin/btrfs`.
-* Subvolume `$HOME/.snapshots` is available.
+* Both scripts are on the `$PATH` and executable. A good place is `/usr/local/bin/`.
+* Commands `/usr/bin/btrfs` and `/usr/bin/sudo` are available.
+* User has `sudo` rights for `btrfs`.
+* Subvolume `$HOME/.snapshots` is available. Create it using `sudo btrfs subvolume create $HOME/.snapshots`.
 
 # Configuration
 `btrfs-click.sh` script:
