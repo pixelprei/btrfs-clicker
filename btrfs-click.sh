@@ -1,8 +1,21 @@
 #!/bin/bash
 
+# This script creates a set of hourly, daily, weekly and monthly snapshots.
+# If a snapshot for the time period is already present, then no new snapshot will be made
+# for that time period. This means that you can call this script as often as you like, but
+# more than once per hour will have no effect. 
+
+
 # --- CONFIGURATION STARTS HERE -----------------------------------------
 
 prefix="$HOME/.snapshots"
+
+# snapshot directory paths
+HOUR_SUBVOL="hourly"
+DAY_SUBVOL="daily"
+WEEK_SUBVOL="weekly"
+MONTH_SUBVOL="monthly"
+YEAR_SUBVOL="yearly"
 
 # --- CONFIGURATION ENDS HERE -------------------------------------------
 
@@ -30,7 +43,7 @@ function click() {
     create "$prefix"
     create "$prefix/$3"
 
-    /usr/bin/sudo /usr/bin/btrfs subvolume snapshot /var/home/rob "$prefix/$3/$2"
+    /usr/bin/sudo /usr/bin/btrfs subvolume snapshot "$HOME" "$prefix/$3/$2"
   fi
 }
 
@@ -45,8 +58,8 @@ function check() {
 check "/usr/bin/sudo"
 check "/usr/bin/btrfs"
 
-click "$date-$hour??-$USER"        "$date-$hour$minute-$USER"        "hourly"
-click "$date-????-$USER"           "$date-$hour$minute-$USER"        "daily"
-click "????????-????-W$week-$USER" "$date-$hour$minute-W$week-$USER" "weekly"
-click "$year$month??-????-$USER"   "$date-$hour$minute-$USER"        "monthly"
+click "$date-$hour??-$USER"        "$date-$hour$minute-$USER"        "$HOUR_SUBVOL"
+click "$date-????-$USER"           "$date-$hour$minute-$USER"        "$DAY_SUBVOL"
+click "????????-????-W$week-$USER" "$date-$hour$minute-W$week-$USER" "$WEEK_SUBVOL"
+click "$year$month??-????-$USER"   "$date-$hour$minute-$USER"        "$MONTH_SUBVOL"
 

@@ -1,6 +1,6 @@
 # btrfs-clicker
 
-This is yet another small set of scripts for _creating and pruning BTRFS snapshots_. I use it on my immutable Linux operating system (ATOMIC Fedora). It can be run by ordinary users, as long as they are allowed `sudo btrfs`. It does not require access to any files outside of `$HOME`.
+This is yet another small set of scripts for _creating and pruning BTRFS snapshots_. I use it on my immutable Linux operating system (ATOMIC Fedora). It can be run by ordinary users, as long as they are allowed `sudo btrfs`. The scripts do not require access to any files outside of `$HOME`.
 
 The scripts maintain sets of hourly, daily, weekly and monthly snapshots. The scripts are _idempotent_, meaning that the scripts can be called any number of times without causing uninteded effects (see usage).
 
@@ -17,7 +17,7 @@ The scripts maintain sets of hourly, daily, weekly and monthly snapshots. The sc
 * Remove _weekly_ snapshots older than 4 weeks
 * Remove _monthly_ snapshots older than 3 months
 
-Using & listing snapshots can be done using the `btrfs` command. Consider making an alias for showing a list of snapshots:
+Using & listing snapshots can be done using the `btrfs` command. Consider making an alias for the following command that shows a list of snapshots:
 ```
 sudo btrfs subvolume list -ts --sort=path $HOME/.snapshots/
 ```
